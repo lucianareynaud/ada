@@ -31,4 +31,11 @@ houses_sp['rooms'].median()
 
 houses_sp['rooms'] = houses_sp['rooms'].fillna(houses_sp['rooms'].median())
 
-#também podemos ter dados digitados erroneod
+#também podemos ter dados digitados erroneos
+#casas não tem piso, entao foi colocado tracinho
+
+houses_sp['floor'].value_counts()
+
+#igualando a zero
+
+houses_sp.loc[houses_sp['floor'] == '-', 'floor'] = '0'
