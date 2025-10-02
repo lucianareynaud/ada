@@ -22,3 +22,17 @@ ax = candy_filtered.plot(x='observation_date', y='industrial_production', fig_si
 xcoords = ['2011-01-01', '2012-01-01', '2013-01-01', '2014-01-01', '2015-01-01', '2016-01-01', '2017-01-01']
 for xc in xcoords:
     plt.axvline(x=xc, color='black', linestyle='--')
+
+#decomposição da sazonalidade com a lib stats models
+#fazer conversão do observation time para que seja um índice
+
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+candy_filtered.set_index('observation_date', inplace=True)
+analysis = candy_filtered[['industrial_production']].copy()
+
+decompose_result = seasonal_decompose
+
+
+
+
