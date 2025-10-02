@@ -37,6 +37,7 @@ seasonal = decompose_result.seasonal
 residual = decompose_result.resid
 
 decompose_result.plot()
+#revela se existe de fato uma variável sazonalidade para tomarmos melhores decisões nos negócios
 
 
 
