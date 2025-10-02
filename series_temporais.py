@@ -31,7 +31,13 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 candy_filtered.set_index('observation_date', inplace=True)
 analysis = candy_filtered[['industrial_production']].copy()
 
-decompose_result = seasonal_decompose
+decompose_result = seasonal_decompose(analysis, model='multiplicative') #modelo multiplicative separa os componentes do gráfico temporal
+trend = decompose_result.trend
+seasonal = decompose_result.seasonal
+residual = decompose_result.residual
+
+decompose_result.plot()
+
 
 
 
