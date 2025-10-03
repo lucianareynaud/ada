@@ -7,4 +7,8 @@ penguins.head()
 
 penguins['species'].value_count()
 penguins_numeric = penguins.drop(columns=['species', 'island', 'sex'])
-penguins.corr()
+penguins_numeric.corr()
+
+for col in penguins.drop(columns = ['species', 'island', 'sex']):
+    sns.barplot(data=penguins, x='species', y=col, ci=90)
+    plt.show()
